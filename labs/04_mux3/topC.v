@@ -10,15 +10,15 @@ module mux3e (
     input x1, x2, x3, s0, s1,
     output f);
     // Instancie e conecte os componentes abaixo  
-
+    mux2 g1 (x1, x2, s1, g);
+    mux2 f1 (g, x3, s0, f);
 endmodule
 
 // Funcional
 module mux3f (
     input x1, x2, x3, s0, s1,
     output f);
-    // Digite o seu código abaixo  
-
+    assign f = s0 ? x3 : s1 ? x2 : x1; 
 endmodule
 
 module mux2(
